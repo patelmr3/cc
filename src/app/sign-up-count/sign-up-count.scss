@@ -1,0 +1,21 @@
+@import '../mixin.scss';
+
+.sign-up-count-wrapper{
+  padding: .6em .8em;
+  border: 1px solid $colorPrimary;
+  border-radius: .3em;
+  color: $colorPrimary;
+  font-family: $fontPrimary;
+}
+
+.sign-up-count-num{
+  font-family: $fontFancy;
+  font-size: 1.5em;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.sign-up-count-text{
+  color: #fff;
+}
+

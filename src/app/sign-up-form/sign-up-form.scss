@@ -1,0 +1,90 @@
+@import '../mixin';
+
+.sign-up-form-wrapper{
+  position: absolute;
+  width: 100%;
+  padding: 40px 15px 15px;
+  margin: auto;
+  font-family: $fontPrimary;
+  color: $colorPrimary;
+}
+
+header{
+  text-align: center;
+}
+
+#sign-up-form{
+  margin: 30px 0px; 
+}
+
+.form-control-wrapper{
+  margin: 20px 0px;
+}
+
+input[type=text]{
+  color: #fff;
+  background-color: $colorPrimaryDark;
+  border: 2px solid transparent;
+  &:hover{
+    border: 2px solid $colorPrimary;
+  }
+  &:focus{
+    border: 2px solid $colorPrimary;
+  }
+}
+
+#sign-up-btn{
+  width: 100%;
+  margin-top: 15px;
+  font-size: 2.3em;
+}
+
+.sign-up-success{
+  margin: 20px 0px;
+  text-align: center;
+  
+  .success-icon{
+    width: 60px;
+    height: 60px;
+    padding-top: 20px;
+    font-size: 1.5em;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background-color: $colorSecondary;
+  }
+  
+  p{
+    margin: 15px 0px;
+    line-height: 1.3;
+  }
+
+  .applicant-id{
+    margin-bottom: 50px;
+    padding: 1em;
+    font-size: 1.3em;
+    font-weight: 500;
+    border: 1px solid $colorSecondary;
+    border-radius: 5px;
+    color: $colorSecondary;
+  }
+
+  .go-to-home-btn{
+    width: 100%;
+    font-size: .6em;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .sign-up-form-wrapper{
+    max-width: 420px;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    padding: 0px;
+  }
+
+  #sign-up-btn{
+    font-size: 1.6em;
+  }
+}

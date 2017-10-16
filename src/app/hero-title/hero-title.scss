@@ -1,0 +1,40 @@
+@import '../mixin';
+
+header{
+  font-family: $fontPrimary;
+  font-size: 3.7em;
+  font-weight: 100;
+  line-height: 1;
+  color: #fff;
+}
+
+h1{
+  margin:0px;
+  font-size: inherit;
+  font-weight: inherit;
+  .sub{
+    font-family: $fontFancy;
+    color: $colorPrimary;
+    .white{
+      color: #fff;
+    }
+  }
+}
+
+p{
+  margin: 1em 0em;
+  font-size: .34em;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+@media all and (max-width: 991px) {
+  .btn{
+    width: 100%;
+    margin-top: 15px;
+    font-size: 2.2em;
+  }
+}
+
+
+

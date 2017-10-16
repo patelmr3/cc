@@ -1,0 +1,59 @@
+<section class="sign-up-form-wrapper">
+
+  <header>
+    <logo></logo>
+  </header>
+
+  
+  <form
+  *ngIf="!signupSuccess" 
+  [formGroup]="signupFormGroup"
+  (ngSubmit)="doSignUp(signupFormGroup.value)"
+  id="sign-up-form" 
+  name="sign-up-form" 
+  action=""
+  novalidate>
+
+    <div class="form-control-wrapper">
+      <label for="userName">Name</label>
+      <input formControlName="userName" type="text" id="userName" name="userName">
+      <div 
+      class="form-error-message"
+      *ngIf="signupFormGroup.controls.userName.errors 
+      && (signupFormGroup.controls.userName.dirty || signupFormGroup.controls.userName.touched)">
+        <span *ngIf="signupFormGroup.controls.userName.errors.required"><i class="fa fa-times-circle"></i> Name required</span>
+      </div>
+    </div>
+
+    <div class="form-control-wrapper">
+      <label for="userEmail">Email</label>
+      <input formControlName="userEmail" type="text" id="userEmail">
+      <div 
+      class="form-error-message"
+      *ngIf="signupFormGroup.controls.userEmail.errors 
+      && (signupFormGroup.controls.userEmail.dirty || signupFormGroup.controls.userEmail.touched)">
+        <span *ngIf="signupFormGroup.controls.userEmail.errors?.required"><i class="fa fa-times-circle"></i> Email required</span>
+        <span *ngIf="signupFormGroup.controls.userEmail.errors?.pattern"><i class="fa fa-times-circle"></i> Email not valid</span>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="form-error-message">
+      <i class="fa fa-times-circle"></i> {{ errorMessage }} Please try again
+    </div>
+
+    <button id="sign-up-btn" class="btn" [disabled]="!signupFormGroup.valid || signupBtnDisabled">Sign up</button>
+
+  </form>
+
+  <section 
+  *ngIf="signupSuccess"
+  class="sign-up-success">
+    <i class="fa fa-check success-icon"></i>
+    <p>Thank you for signing up. Save the applicant ID below for your reference.</p>
+    <div class="applicant-id">{{ applicantId || 'Error. Please try again' }}</div>
+    <button class="go-to-home-btn" routerLink="/" class="btn btn-darker">
+      <i class="fa fa-angle-left"></i> Go to Home
+    </button>
+  </section>
+
+</section>
